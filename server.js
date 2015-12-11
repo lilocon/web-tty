@@ -33,6 +33,10 @@ io.sockets.on('connection', function (socket) {
     socket.on("resize", function(data){
         term.resize(data.cols, data.rows);
     });
+    socket.on('disconnect', function() {
+        term.destroy();
+    });
+
 });
 
 server.listen(3000);
