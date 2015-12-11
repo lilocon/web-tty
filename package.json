@@ -1,0 +1,14 @@
+{
+  "name": "pty",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.13.3",
+    "pty.js": "^0.3.0",
+    "socket.io": "^1.3.7"
+  },
+  "devDependencies": {},
+  "author": "Leo Yang <leo@phpres.cn>",
+  "license": "ISC"
+}
