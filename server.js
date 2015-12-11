@@ -14,7 +14,7 @@ app.get('/hterm.js', function (req, res) {
 });
 
 io.sockets.on('connection', function (socket) {
-    var term = pty.spawn('bash', [], {
+    var term = pty.spawn(process.env.SHELL, [], {
         name: 'xterm-color',
         cols: 80,
         rows: 30,
