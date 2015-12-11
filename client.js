@@ -2,7 +2,7 @@ hterm.defaultStorage = new lib.Storage.Local();
 hterm.defaultStorage.clear();
 var term = new hterm.Terminal();
 term.onTerminalReady = function() {
-    var socket = io.connect("ws://localhost:3000/");
+    var socket = io.connect(location.href);
     var tio = term.io.push();
     tio.onVTKeystroke = function(str) {
         socket.emit("data", str);
