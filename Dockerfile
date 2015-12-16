@@ -16,6 +16,8 @@ deb-src http://mirrors.teraren.com/dotdeb/ stable all" > /etc/apt/sources.list
 
 RUN apt-get update
 RUN apt-get install zsh git curl php7.0-cli php7.0-curl php7.0-mysql php7.0-intl -y --force-yes
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN composer config --global github-oauth.github.com 6d30e42c545c9b6096f7a8da7750d724efd4718d
 RUN curl -L https://raw.github.com/phpres/oh-my-zsh/master/tools/install.sh > /tmp/installohmyzsh.sh
 RUN chmod a+x /tmp/installohmyzsh.sh
 RUN git clone https://github.com/phpres/web-tty.git /webtty/
