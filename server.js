@@ -1,7 +1,7 @@
 var app = require('express')();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
-var pty = require("pty.js");
+var pty = require("node-pty");
 
 app.get('/', function (req, res) {
     res.sendfile(__dirname + '/client.html');
@@ -11,6 +11,10 @@ app.get('/client.js', function (req, res) {
 });
 app.get('/hterm.js', function (req, res) {
     res.sendfile(__dirname + '/hterm.js');
+});
+
+app.get('/socket.io.js', function (req, res) {
+    res.sendfile(__dirname + '/socket.io.js');
 });
 
 io.sockets.on('connection', function (socket) {
